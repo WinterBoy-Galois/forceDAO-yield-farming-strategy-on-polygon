@@ -31,6 +31,11 @@ async function getCurrentBlock() {
     return currentBlock
 }
 
+async function getCurrentOwner() {
+    const currentBlock = await web3.eth.getOwner()
+    return currentOwner
+}
+
 async function getCurrentTimestamp() {
     const currentBlock = await web3.eth.getBlockNumber()
     const currentTimestamp = await web3.eth.getBlock(currentBlock).timestamp
